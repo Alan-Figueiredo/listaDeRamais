@@ -1,4 +1,4 @@
-import styles from './Cards.module.css'
+import styles from './Container.module.css'
 
 function Container({children}) {
     return(

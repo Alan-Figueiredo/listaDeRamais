@@ -1,0 +1,19 @@
+.container {
+  margin: auto;
+  margin-top: 10rem;
+  width: 60rem;
+  height: 40rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.containerList {
+  margin: auto;
+  margin-top: 10rem;
+  width: 50rem;
+  height: 40rem;
+  text-align: center;
+  background-color: white;
+}
+
