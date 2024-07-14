@@ -1,0 +1,22 @@
+.header {
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header a {
+  text-decoration: none;
+  color: #004866;
+  margin-right: 9rem;
+}
+
+.logo {
+  width: 12rem;
+  margin-left: 100px;
+}

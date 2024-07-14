@@ -1,0 +1,52 @@
+.container {
+  margin: auto;
+  margin-top: 10rem;
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards {
+  background-color: #ffffff;
+  width: 200px;
+  height: 150px;
+  margin-left: 7rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    width: 80vw;
+    height: 60vh;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .container {
+    width: 70vw;
+    height: 60vh;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .container {
+    width: 70vw;
+    height: 60vh;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .container {
+    width: 60vw;
+    height: 60vh;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .container {
+    width: 60vw;
+    height: 60vh;
+  }
+}
