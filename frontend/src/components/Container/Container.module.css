@@ -17,3 +17,13 @@
   background-color: white;
 }
 
+.containerAgenda {
+  margin: auto;
+  margin-top: 6rem;
+  width: 60rem;
+  height: 40rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
