@@ -1,0 +1,37 @@
+.containerBox {
+  margin-top: 4rem;
+  width: 28rem;
+  height: 20rem;
+  border: 1px solid #000000;
+}
+
+.titleSetor {
+  font-size: 19px;
+  margin-top: 1.5rem;
+  padding: 0.6rem;
+  border-radius: 15px;
+  background-color: #004866;
+  color: white;
+  width: 25rem;
+  height: auto;
+  display: inline-block;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0.4rem;
+  width: 23rem;
+  background-color: yellowgreen;
+  /*background-color: #EAEAEA; */
+}
+
+.dataInfo {
+  background-color: yellowgreen;
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.4rem;
+  width: 23rem;
+}
+

@@ -5,7 +5,7 @@ function Cards({ nome }) {
   return (
     <div className={styles.cards}>
       <Link to="/listCity">
-        <img src={require(`../../assets/logo${nome}.png`)} />
+        <img src={require(`../../assets/logo${nome}.png`)} alt={nome}/>
       </Link>
     </div>
   );
