@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ListCity from "./pages/ListCity";
 import Agenda from "./pages/Agenda";
+import Admin from "./pages/Admin";
 
 function AppRoutes() {
   return (
@@ -10,6 +11,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/listCity" element={<ListCity />}></Route>
         <Route path="/agenda" element={<Agenda />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
       </Routes>
     </BrowserRouter>
   );

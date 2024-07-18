@@ -27,3 +27,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.containerLogin {
+  margin: auto;
+  width: 60rem;
+  height: 40rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
