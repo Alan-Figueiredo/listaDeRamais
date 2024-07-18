@@ -1,37 +1,44 @@
-import {Table} from 'react-bootstrap';
+import styles from "./BoxAgenda.module.css";
 
-function StripedColumnsExample() {
+function Table() {
   return (
-    <Table striped="striped bordered hover">
+    <table className={styles.containerTable}>
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Ramal</th>
+          <th>Name</th>
+          <th>Departamento</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td>1asassaasas</td>
+          <td>Domenic</td>
+          <td>asasasasaassasaasasasaassa</td>
+        </tr>
+        <tr>
           <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>Domenic</td>
+          <td>88,110</td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <td>1</td>
+          <td>Domenic</td>
+          <td>88,110</td>
         </tr>
         <tr>
-          <td>3</td>
-          <td colSpan={2}>Larry the Bird</td>
-          <td>@twitter</td>
+          <td>1</td>
+          <td>Domenic</td>
+          <td>88,110</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Domenic</td>
+          <td>88,110</td>
         </tr>
       </tbody>
-    </Table>
+    </table>
   );
 }
 
-export default StripedColumnsExample;
+export default Table;

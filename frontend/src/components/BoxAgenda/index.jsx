@@ -6,7 +6,7 @@ function BoxAgenda({ setor }) {
     <div className={styles.containerBox}>
       <div className={styles.titleSetor}>{setor}</div>
       <>
-        <Table nome="nome" depart="departamento" ramal="ramal" />
+        <Table />
       </>
     </div>
   );

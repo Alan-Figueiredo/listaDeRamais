@@ -1,7 +1,7 @@
 .containerBox {
   margin-top: 4rem;
   width: 28rem;
-  height: 20rem;
+  height: auto;
   border: 1px solid #000000;
 }
 
@@ -17,21 +17,22 @@
   display: inline-block;
 }
 
-.details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-  padding: 0.4rem;
-  width: 23rem;
-  background-color: yellowgreen;
-  /*background-color: #EAEAEA; */
+.containerTable {
+  border-collapse: collapse;
+  width: 23.5rem;
+  display: inline-table;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
 }
 
-.dataInfo {
-  background-color: yellowgreen;
-  display: inline-block;
-  margin-top: 0.4rem;
-  padding: 0.4rem;
-  width: 23rem;
+.containerTable thead th {
+  background-color: #EAEAEA;
+  padding: 6px;
+  border-bottom: 0.5rem solid #F5F5F5;
+}
+
+.containerTable tbody tr td {
+  padding: 6px;
+  background-color: #FFFFFF;
 }
 
