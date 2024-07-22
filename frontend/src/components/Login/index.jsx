@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
 function Login() {
   return (
@@ -8,7 +9,9 @@ function Login() {
         <p></p>
         <input type="text" placeholder="Password"></input>
         <p></p>
+        <Link to="/pageAdmin">
         <button>Login</button>
+        </Link>
       </div>
     </div>
   );

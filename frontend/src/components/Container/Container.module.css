@@ -36,3 +36,10 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.containerAdmin {
+  margin-top: 10rem;
+  text-align: center;
+  height: auto;
+  width: auto;
+}

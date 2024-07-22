@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import ListCity from "./pages/ListCity";
 import Agenda from "./pages/Agenda";
 import Admin from "./pages/Admin";
+import PageAdmin from "./pages/PageAdmin";
 
 function AppRoutes() {
   return (
@@ -12,6 +13,7 @@ function AppRoutes() {
         <Route path="/listCity" element={<ListCity />}></Route>
         <Route path="/agenda" element={<Agenda />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/pageAdmin" element={<PageAdmin />}></Route>
       </Routes>
     </BrowserRouter>
   );

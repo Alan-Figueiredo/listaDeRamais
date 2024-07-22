@@ -36,3 +36,25 @@
   background-color: #FFFFFF;
 }
 
+
+.containerTableAdmin {
+  border-collapse: collapse;
+  width: 80rem;
+  display: inline-table;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  justify-self: center;
+}
+
+.containerTableAdmin thead th {
+  
+  background-color: #474747;
+  color: white;
+  padding: 6px;
+  border-bottom: 0.5rem solid #fbfbfb;
+}
+
+.containerTableAdmin tbody tr td {
+  padding: 6px;
+  background-color: #a6a2a2;
+}
