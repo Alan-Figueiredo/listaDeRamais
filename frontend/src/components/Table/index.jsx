@@ -1,13 +1,13 @@
-import styles from "./BoxAgenda.module.css";
+import styles from "./Table.module.css";
 
-function TableAdmin({ramal,nome,depart}) {
+function Table() {
   return (
-    <table className={styles.containerTableAdmin}>
+    <table className={styles.containerTable}>
       <thead>
         <tr>
-          <th>{ramal}</th>
-          <th>{nome}</th>
-          <th>{depart}</th>
+          <th>Ramal</th>
+          <th>Name</th>
+          <th>Departamento</th>
         </tr>
       </thead>
       <tbody>
@@ -15,7 +15,6 @@ function TableAdmin({ramal,nome,depart}) {
           <td>1asassaasas</td>
           <td>Domenic</td>
           <td>asasasasaassasaasasasaassa</td>
-          <button>Editar</button>
         </tr>
         <tr>
           <td>1</td>
@@ -42,4 +41,4 @@ function TableAdmin({ramal,nome,depart}) {
   );
 }
 
-export default TableAdmin;
+export default Table;

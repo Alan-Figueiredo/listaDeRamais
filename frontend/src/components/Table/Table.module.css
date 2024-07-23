@@ -1,0 +1,62 @@
+.containerTable {
+  border-collapse: collapse;
+  width: 23.5rem;
+  display: inline-table;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.containerTable thead th {
+  background-color: #eaeaea;
+  padding: 6px;
+  border-bottom: 0.5rem solid #f5f5f5;
+}
+
+.containerTable tbody tr td {
+  padding: 6px;
+  background-color: #ffffff;
+}
+
+.containerTableAdmin {
+  border-collapse: collapse;
+  width: 90%;
+  display: inline-table;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  
+}
+
+.containerTableAdmin thead th {
+  border: 2px solid #fff;
+  background-color: #014866;
+  color: white;
+  padding: 6px;
+  border-bottom: 1rem solid #f5f5f5;
+}
+
+.containerTableAdmin tbody tr {
+  border: 2px solid #fff;
+}
+
+.containerTableAdmin tbody tr td {
+  padding: 6px;
+  background-color: #dadada;
+}
+
+.iconCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.name {
+  flex-grow: 1; 
+  text-align: center; 
+}
+
+.icons {
+  margin-left: auto; 
+  display: flex;
+}
+

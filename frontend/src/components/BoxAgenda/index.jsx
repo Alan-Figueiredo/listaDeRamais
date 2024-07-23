@@ -1,5 +1,5 @@
 import styles from "./BoxAgenda.module.css";
-import Table from "./table";
+import Table from "../Table";
 
 function BoxAgenda({ setor }) {
   return (

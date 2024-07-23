@@ -1,19 +1,21 @@
 import HeaderAdmin from "../../components/Header/indexAdmin";
-import ContainerAdmin from "../../components/Container/containerAdmin"
+import ContainerAdmin from "../../components/Container/containerAdmin";
+import TableAdmin from "../../components/Table/tableAdmin";
 
-import TableAdmin from "../../components/BoxAgenda/tableAdmin"
+function PageAdmin() {
+  const data = [
+    { ramal: "(75) 2101-85900000000000000", nome: "Alan", depart: "Ti" },
+    { ramal: "(75) 2101-8540", nome: "Domenic", depart: "88,110" },
+    { ramal: "(75) 2101-8548", nome: "Domenic", depart: "88,110" },
+    { ramal: "(75) 2101-8549", nome: "Domenic", depart: "88,110" },
+  ];
 
-function PageAdmin () {
-
-    return(
-        <ContainerAdmin>
-            <HeaderAdmin/>
-            <div >
-                <TableAdmin nome="Nome" depart="Departamento" ramal="Ramal"/>
-            </div>
-        </ContainerAdmin>
-        
-    )
+  return (
+    <ContainerAdmin>
+      <HeaderAdmin />
+      <TableAdmin data={data} />
+    </ContainerAdmin>
+  );
 }
 
 export default PageAdmin;

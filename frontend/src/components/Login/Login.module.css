@@ -10,7 +10,7 @@
   border: 5px solid #004866;
 }
 
-input {
+.inputLogin {
   margin-top: 5px;
   padding: 5px;
   width: 15rem;
@@ -18,7 +18,7 @@ input {
   border: 2px solid #004866;
 }
 
-button {
+.buttonLogin {
   margin-top: 10px;
   border-radius: 8px;
   padding: 5px;
