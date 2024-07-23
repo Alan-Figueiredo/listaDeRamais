@@ -5,9 +5,18 @@ function TableAdmin({ data }) {
   return (
     <table className={styles.containerTableAdmin}>
       <thead>
+      <tr>
+          <th colSpan="4">
+            <div className={styles.buttonNewRamalContainer}>
+              <span>Cadastre um novo ramal</span>
+              <button className={styles.buttonNewRamal}>Novo Ramal</button>
+            </div>
+          </th>
+        </tr>
         <tr>
           <th>Ramal</th>
           <th>Nome</th>
+          <th>Empresa</th>
           <th>Departamento</th>
         </tr>
       </thead>
@@ -16,6 +25,7 @@ function TableAdmin({ data }) {
           <tr key={i}>
             <td>{item.ramal}</td>
             <td>{item.nome}</td>
+            <td>{item.empresa}</td>
             <td className={styles.iconCell}>
               <span className={styles.name}>{item.depart}</span>
               <span className={styles.icons}>

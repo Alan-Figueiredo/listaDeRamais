@@ -19,7 +19,7 @@
 
 .containerTableAdmin {
   border-collapse: collapse;
-  width: 90%;
+  width: auto;
   display: inline-table;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
@@ -27,6 +27,7 @@
 }
 
 .containerTableAdmin thead th {
+  width: 17rem;
   border: 2px solid #fff;
   background-color: #014866;
   color: white;
@@ -60,3 +61,13 @@
   display: flex;
 }
 
+.buttonNewRamalContainer {
+  
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.buttonNewRamal {
+  padding: 8px 16px;
+}

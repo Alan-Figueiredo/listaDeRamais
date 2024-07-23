@@ -3,7 +3,7 @@ import styles from "./Login.module.css";
 function Login() {
   return (
     <div className={styles.containerLogin}>
-      <div className={styles.inputLogin}>
+      <div className={styles.divLogin}>
         <img src={require("../../assets/iconeLogin.png")} alt="login" className={styles.imgLogin}/>
         <input type="text" placeholder="username" className={styles.inputLogin}></input>
         <p></p>

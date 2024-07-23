@@ -10,7 +10,7 @@
   border: 5px solid #004866;
 }
 
-.inputLogin {
+.divLogin {
   margin-top: 5px;
   padding: 5px;
   width: 15rem;
@@ -18,11 +18,18 @@
   border: 2px solid #004866;
 }
 
+.inputLogin {
+  margin-top: 5px;
+  padding: 5px;
+  width: 13rem;
+  border-radius: 5px;
+  border: 2px solid #004866;
+}
+
 .buttonLogin {
   margin-top: 10px;
   border-radius: 8px;
-  padding: 5px;
-  border: 2px solid #004866;
+  padding: 6px;
   background-color: #004866;
   color: white;
 }
