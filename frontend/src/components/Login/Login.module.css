@@ -27,13 +27,19 @@
 }
 
 .buttonLogin {
-  margin-top: 10px;
+  margin-top: 8px;
   border-radius: 8px;
-  padding: 6px;
+  padding: 6px 15px;
   background-color: #004866;
   color: white;
+  cursor: pointer;
+  transition: 0.2s all;
 }
 
+.buttonLogin:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px white;
+}
 .imgLogin {
 
   display: block;

@@ -4,6 +4,7 @@ import ListCity from "./pages/ListCity";
 import Agenda from "./pages/Agenda";
 import Admin from "./pages/Admin";
 import PageAdmin from "./pages/PageAdmin";
+import PageEditRamal from "./pages/PageEditRamal";
 
 function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ function AppRoutes() {
         <Route path="/agenda" element={<Agenda />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
         <Route path="/pageAdmin" element={<PageAdmin />}></Route>
+        <Route path="/pageEditRamal" element={<PageEditRamal />}></Route>
       </Routes>
     </BrowserRouter>
   );

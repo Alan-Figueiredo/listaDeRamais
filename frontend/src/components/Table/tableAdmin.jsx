@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import ButtonCustom from "../ButtonCustom";
 import Icons from "../Icons";
 import styles from "./Table.module.css";
 
@@ -5,19 +7,12 @@ function TableAdmin({ data }) {
   return (
     <table className={styles.containerTableAdmin}>
       <thead>
-      <tr>
-          <th colSpan="4">
-            <div className={styles.buttonNewRamalContainer}>
-              <span>Cadastre um novo ramal</span>
-              <button className={styles.buttonNewRamal}>Novo Ramal</button>
-            </div>
-          </th>
-        </tr>
         <tr>
           <th>Ramal</th>
           <th>Nome</th>
           <th>Empresa</th>
           <th>Departamento</th>
+          <th><Link to="/pageEditRamal"><ButtonCustom /></Link></th>
         </tr>
       </thead>
       <tbody>
@@ -26,11 +21,9 @@ function TableAdmin({ data }) {
             <td>{item.ramal}</td>
             <td>{item.nome}</td>
             <td>{item.empresa}</td>
-            <td className={styles.iconCell}>
-              <span className={styles.name}>{item.depart}</span>
-              <span className={styles.icons}>
-                <Icons />
-              </span>
+            <td>{item.depart}</td>
+            <td>
+              <Icons />
             </td>
           </tr>
         ))}

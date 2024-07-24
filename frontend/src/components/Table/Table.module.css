@@ -23,11 +23,10 @@
   display: inline-table;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
-  
 }
 
 .containerTableAdmin thead th {
-  width: 17rem;
+  width: 17%;
   border: 2px solid #fff;
   background-color: #014866;
   color: white;
@@ -44,30 +43,4 @@
   background-color: #dadada;
 }
 
-.iconCell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
 
-.name {
-  flex-grow: 1; 
-  text-align: center; 
-}
-
-.icons {
-  margin-left: auto; 
-  display: flex;
-}
-
-.buttonNewRamalContainer {
-  
-  display: flex;
-  justify-content: flex-end;
-  
-}
-
-.buttonNewRamal {
-  padding: 8px 16px;
-}

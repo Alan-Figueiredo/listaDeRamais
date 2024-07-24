@@ -1,6 +1,8 @@
 import HeaderAdmin from "../../components/Header/indexAdmin";
 import ContainerAdmin from "../../components/Container/containerAdmin";
 import TableAdmin from "../../components/Table/tableAdmin";
+import Banner from "../../components/Banner";
+
 
 function PageAdmin() {
   const data = [
@@ -16,6 +18,7 @@ function PageAdmin() {
   return (
     <ContainerAdmin>
       <HeaderAdmin />
+      <Banner/>
       <TableAdmin data={data} />
     </ContainerAdmin>
   );

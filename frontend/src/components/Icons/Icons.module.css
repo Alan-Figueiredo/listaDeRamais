@@ -1,11 +1,11 @@
-
 .iconEdit {
   font-size: 27px;
-  color: #004966;
+  color: #e6cf00;
+  cursor: pointer;
 }
 
 .iconClear {
-  margin-left: 10px;
-  font-size: 28px;
+  font-size: 27px;
   color: #f12e2e;
+  cursor: pointer;
 }

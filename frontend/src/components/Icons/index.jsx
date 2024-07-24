@@ -5,8 +5,12 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 function Icons() {
   return (
     <>
-      <LuClipboardEdit className={styles.iconEdit} />
-      <RiDeleteBin6Fill className={styles.iconClear} />
+      <button>
+        <LuClipboardEdit className={styles.iconEdit} />
+      </button>
+      <button>
+        <RiDeleteBin6Fill className={styles.iconClear} />
+      </button>
     </>
   );
 }
