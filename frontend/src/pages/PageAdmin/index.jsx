@@ -18,7 +18,7 @@ function PageAdmin() {
     <>
     <HeaderAdmin />
     <ContainerAdmin>
-      <Banner/>
+      <Banner nome="Cadastro de Ramais"/>
       <TableAdmin data={data} />
     </ContainerAdmin>
     </>

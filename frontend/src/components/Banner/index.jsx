@@ -1,9 +1,9 @@
 import styles from "./Banner.module.css";
 
-function Banner() {
+function Banner({nome}) {
   return(
     <div className={styles.banner}>
-    Cadastro de Ramais
+    {nome}
     </div>
   )
 }

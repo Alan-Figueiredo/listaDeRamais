@@ -12,7 +12,7 @@ function TableAdmin({ data }) {
           <th>Nome</th>
           <th>Empresa</th>
           <th>Departamento</th>
-          <th><Link to="/pageEditRamal"><ButtonCustom /></Link></th>
+          <th><Link to="/pageEditRamal"><ButtonCustom nome="Novo Ramal"/></Link></th>
         </tr>
       </thead>
       <tbody>
