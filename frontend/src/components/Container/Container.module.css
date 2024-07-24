@@ -38,8 +38,12 @@
 }
 
 .containerAdmin {
-  margin-top: 10rem;
+  padding: 2rem;
+  margin: auto;
+  margin-top: 8rem;
   text-align: center;
   height: auto;
-  width: auto;
+  width: 60rem;
+  background-color: white;
+  border: 10px ridge black;
 }

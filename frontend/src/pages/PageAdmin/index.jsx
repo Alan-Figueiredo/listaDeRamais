@@ -11,16 +11,17 @@ function PageAdmin() {
     { ramal: "(75) 2101-8540", nome: "Domenic", depart: "88,110",empresa : "Topazio" },
     { ramal: "(75) 2101-8540", nome: "Domenic", depart: "88,110",empresa : "Topazio" },
     { ramal: "(75) 2101-8540", nome: "Domenic", depart: "88,110",empresa : "Topazio" },
-    
-   
+
   ];
 
   return (
+    <>
+    <HeaderAdmin />
     <ContainerAdmin>
-      <HeaderAdmin />
       <Banner/>
       <TableAdmin data={data} />
     </ContainerAdmin>
+    </>
   );
 }
 

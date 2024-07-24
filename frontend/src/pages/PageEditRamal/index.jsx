@@ -3,10 +3,11 @@ import ContainerAdmin from "../../components/Container/containerAdmin";
 
 function PageEditRamal() {
   return (
+    <>
+     <HeaderAdmin />
     <ContainerAdmin>
-      <HeaderAdmin />
     <h1>Parei por hoje</h1>
-    </ContainerAdmin>
+    </ContainerAdmin></>
   );
 }
 
