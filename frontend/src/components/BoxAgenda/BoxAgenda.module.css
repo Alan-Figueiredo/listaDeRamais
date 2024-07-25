@@ -2,7 +2,6 @@
   margin-top: 4rem;
   width: 28rem;
   height: auto;
-  border: 1px solid #000000;
 }
 
 .titleSetor {
@@ -12,7 +11,7 @@
   border-radius: 15px;
   background-color: #004866;
   color: white;
-  width: 25rem;
+  width: 26rem;
   height: auto;
   display: inline-block;
 }
