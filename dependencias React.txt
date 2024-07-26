@@ -1,1 +1,1 @@
-npm install react-icons react-router-dom uuid
+npm install react-icons react-router-dom uuid axios
