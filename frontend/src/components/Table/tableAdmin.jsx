@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import ButtonCustom from "../ButtonCustom";
 import Icons from "../Icons";
 import styles from "./Table.module.css";
+import { useState } from "react";
 
 function TableAdmin({ data }) {
+
+  const [] = useState;
+
   return (
     <table className={styles.containerTableAdmin}>
       <thead>

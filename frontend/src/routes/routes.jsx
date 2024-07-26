@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import ListCity from "./pages/ListCity";
-import Agenda from "./pages/Agenda";
-import Admin from "./pages/Admin";
-import PageAdmin from "./pages/PageAdmin";
-import PageEditRamal from "./pages/PageEditRamal";
+import Home from "../pages/Home";
+import ListCity from "../pages/ListCity";
+import Agenda from "../pages/Agenda";
+import Admin from "../pages/Admin";
+import PageAdmin from "../pages/PageAdmin";
+import PageEditRamal from "../pages/PageEditRamal";
 
 function AppRoutes() {
   return (
