@@ -1,12 +1,31 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ButtonCustom from "../ButtonCustom";
 import Icons from "../Icons";
 import styles from "./Table.module.css";
-import { useState } from "react";
+import { findAll } from "../../Services/contact/contactService";
 
-function TableAdmin({ data }) {
+function TableAdmin() {
+  const [data, setData] = useState([]);
 
-  const [] = useState;
+  useEffect(() => {
+    const findAllContacts = async () => {
+      try {
+        const response = await findAll();
+        const dataFull = response.data.map((i) => ({
+          ramal: i.number,
+          nome: i.nameContact,
+          empresa: i.idCompany.nameCompany,
+          departamento: i.idSector.nameSector,
+        }));
+
+        setData(dataFull);
+      } catch (e) {
+        throw e;
+      }
+    };
+    findAllContacts();
+  }, []);
 
   return (
     <table className={styles.containerTableAdmin}>
@@ -16,7 +35,11 @@ function TableAdmin({ data }) {
           <th>Nome</th>
           <th>Empresa</th>
           <th>Departamento</th>
-          <th><Link to="/pageEditRamal"><ButtonCustom nome="Novo Ramal"/></Link></th>
+          <th>
+            <Link to="/pageEditRamal">
+              <ButtonCustom nome="Novo Ramal" />
+            </Link>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +48,7 @@ function TableAdmin({ data }) {
             <td>{item.ramal}</td>
             <td>{item.nome}</td>
             <td>{item.empresa}</td>
-            <td>{item.depart}</td>
+            <td>{item.departamento}</td>
             <td>
               <Icons />
             </td>

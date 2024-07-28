@@ -1,4 +1,4 @@
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import { useState } from "react";
 import { login } from "../../Services/auth/authService";
@@ -8,7 +8,6 @@ function Login() {
   const [user, setUser] = useState("");
   const [passwd, setPasswd] = useState("");
   const [error, setError] = useState(null);
-  const [loginStatus, setLoginStatus] = useState(false);
   const navigate = useNavigate();
 
   const handleUser = (event) => setUser(event.target.value);
@@ -22,13 +21,11 @@ function Login() {
 
     try {
       await login(data);
-      setLoginStatus(true);
-      setError(null); 
+      setError(null);
       navigate("/pageAdmin");
     } catch (e) {
       setError("Login ou Senha incorretos");
-      
-      
+
       setTimeout(() => {
         setError(null);
       }, 2000);
@@ -51,7 +48,7 @@ function Login() {
         />
         <p></p>
         <input
-          type="password" 
+          type="password"
           placeholder="Password"
           className={styles.inputLogin}
           onChange={handlePasswd}

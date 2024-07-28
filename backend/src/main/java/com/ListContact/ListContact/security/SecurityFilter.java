@@ -43,7 +43,6 @@ public class SecurityFilter extends OncePerRequestFilter {
         if(authHeader != null) {
             return authHeader.replace("Bearer ", "");
         }
-
         if (request.getCookies()!= null){
             for (Cookie cookie : request.getCookies()) {
                 if (cookie.getName().equals("AUTHTOKEN")) {

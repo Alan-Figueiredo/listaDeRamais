@@ -49,17 +49,19 @@ public class SecurityConf {
                         .requestMatchers(HttpMethod.DELETE, "/api/sector/{idSector}").permitAll()
 
                         // Contact
-                        .requestMatchers(HttpMethod.GET, "api/contact").permitAll()
-                        .requestMatchers(HttpMethod.GET, "api/contact/{idContact}").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/contact").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/contact/{idContact}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/contact/create").permitAll()
                         .requestMatchers(HttpMethod.PATCH, "/api/contact/{idContact}").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/contact/{idContact}").permitAll()
 
                         //Auth
-                        .requestMatchers(HttpMethod.GET, "/api/auth/users").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/auth/users/{idUser}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/auth/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
+
+                        //Users
+                        .requestMatchers(HttpMethod.GET, "/api/users").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/users/{idUser}").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
