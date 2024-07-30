@@ -1,12 +1,13 @@
-import styles from "./ButtonCustom.module.css"
+import styles from "./ButtonCustom.module.css";
 
-function ButtonCustom({nome}) {
-    
-    return(
-        <>
-        <button className={styles.buttonCustom}>{nome}</button>
-        </>
-    )
+function ButtonCustom({ nome, event }) {
+  return (
+    <>
+      <button onClick={event} className={styles.buttonCustom}>
+        {nome}
+      </button>
+    </>
+  );
 }
 
 export default ButtonCustom;

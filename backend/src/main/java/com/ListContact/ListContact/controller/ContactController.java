@@ -43,7 +43,7 @@ public class ContactController {
 
     @PostMapping("/create")
     public ResponseEntity<Contact> createContact(@RequestBody @Valid ContactDto data) {
-
+        System.out.println("contato do front "+data);
 
         Company company = companyRepository.findByNameCompany(data.nomeCompany());
         Sector sector = sectorRepository.findByNameSector(data.nomeSector());

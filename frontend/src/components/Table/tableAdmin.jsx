@@ -13,12 +13,12 @@ function TableAdmin() {
       try {
         const response = await findAll();
         const dataFull = response.data.map((i) => ({
+          id: i.idContact,
           ramal: i.number,
           nome: i.nameContact,
           empresa: i.idCompany.nameCompany,
           departamento: i.idSector.nameSector,
         }));
-
         setData(dataFull);
       } catch (e) {
         throw e;
@@ -50,7 +50,7 @@ function TableAdmin() {
             <td>{item.empresa}</td>
             <td>{item.departamento}</td>
             <td>
-              <Icons />
+              <Icons indexRow={item} />
             </td>
           </tr>
         ))}
