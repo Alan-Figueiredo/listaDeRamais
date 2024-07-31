@@ -17,7 +17,7 @@ function TableAdmin() {
           ramal: i.number,
           nome: i.nameContact,
           empresa: i.idCompany.nameCompany,
-          departamento: i.idSector.nameSector,
+          setor: i.idSector.nameSector,
         }));
         setData(dataFull);
       } catch (e) {
@@ -34,7 +34,7 @@ function TableAdmin() {
           <th>Ramal</th>
           <th>Nome</th>
           <th>Empresa</th>
-          <th>Departamento</th>
+          <th>Setor</th>
           <th>
             <Link to="/pageEditRamal">
               <ButtonCustom nome="Novo Ramal" />
@@ -48,7 +48,7 @@ function TableAdmin() {
             <td>{item.ramal}</td>
             <td>{item.nome}</td>
             <td>{item.empresa}</td>
-            <td>{item.departamento}</td>
+            <td>{item.setor}</td>
             <td>
               <Icons indexRow={item} />
             </td>

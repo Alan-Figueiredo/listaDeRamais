@@ -3,9 +3,12 @@ import styles from "./Icons.module.css";
 import { LuClipboardEdit } from "react-icons/lu";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { deleteContact } from "../../Services/contact/contactService";
+import { useNavigate } from "react-router-dom";
+
 
 function Icons({ indexRow }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const navigate = useNavigate();
 
   const clearContact = () => {
     setIsModalVisible(true);
@@ -22,7 +25,7 @@ function Icons({ indexRow }) {
   };
 
   const editContact = () => {
-    alert("edit");
+    navigate(`/pageEdit/${indexRow.id}`, { state: { contact: indexRow } });
   };
 
   return (
@@ -30,6 +33,7 @@ function Icons({ indexRow }) {
       <button onClick={editContact}>
         <LuClipboardEdit className={styles.iconEdit} />
       </button>
+
       <button onClick={clearContact}>
         <RiDeleteBin6Fill className={styles.iconClear} />
       </button>

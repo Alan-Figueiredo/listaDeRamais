@@ -43,8 +43,6 @@ public class ContactController {
 
     @PostMapping("/create")
     public ResponseEntity<Contact> createContact(@RequestBody @Valid ContactDto data) {
-        System.out.println("contato do front "+data);
-
         Company company = companyRepository.findByNameCompany(data.nomeCompany());
         Sector sector = sectorRepository.findByNameSector(data.nomeSector());
         if (company == null || sector == null) {
@@ -76,9 +74,9 @@ public class ContactController {
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
-    @DeleteMapping("/{idUser}")
-    public ResponseEntity<Void> deleteContact(@PathVariable @Valid int idUser) {
-        return contactRepository.findById(idUser)
+    @DeleteMapping("/{idContact}")
+    public ResponseEntity<Void> deleteContact(@PathVariable @Valid int idContact) {
+        return contactRepository.findById(idContact)
                 .map(result -> {
                     contactRepository.delete(result);
                     return ResponseEntity.noContent().<Void>build();

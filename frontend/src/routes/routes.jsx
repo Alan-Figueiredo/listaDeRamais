@@ -5,17 +5,19 @@ import Agenda from "../pages/Agenda";
 import Admin from "../pages/Admin";
 import PageAdmin from "../pages/PageAdmin";
 import PageEditRamal from "../pages/PageEditRamal";
+import PageEdit from "../pages/PageEditRamal/pageEdit";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/listCity" element={<ListCity />}></Route>
-        <Route path="/agenda" element={<Agenda />}></Route>
-        <Route path="/admin" element={<Admin />}></Route>
-        <Route path="/pageAdmin" element={<PageAdmin />}></Route>
-        <Route path="/pageEditRamal" element={<PageEditRamal />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/listCity" element={<ListCity />} />
+        <Route path="/agenda" element={<Agenda />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/pageAdmin" element={<PageAdmin />} />
+        <Route path="/pageEditRamal" element={<PageEditRamal />} />
+        <Route path="/pageEdit/:id" element={<PageEdit />} />
       </Routes>
     </BrowserRouter>
   );

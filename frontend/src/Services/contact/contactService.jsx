@@ -27,4 +27,13 @@ const deleteContact = async (id) => {
   }
 };
 
-export { findAll, createContact, deleteContact };
+const updateContact = async (id,data) => {
+  try {
+    const response = await api.patch(`/contact/${id}`,data);
+    return response;
+  } catch (e) {
+    throw e;
+  }
+};
+
+export { findAll, createContact, deleteContact, updateContact };

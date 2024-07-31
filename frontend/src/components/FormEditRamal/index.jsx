@@ -35,7 +35,7 @@ function FormEditRamal() {
 
   return (
     <>
-      <Banner nome="Editar ramal" />
+      <Banner nome="Novo ramal" />
       <div className={styles.containerEditRamal}>
         <form className={styles.formRamal}>
           <h4>Ramal</h4>
