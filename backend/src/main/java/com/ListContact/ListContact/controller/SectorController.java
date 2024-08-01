@@ -6,6 +6,7 @@ import com.ListContact.ListContact.model.sector.SectorDto;
 import com.ListContact.ListContact.repository.SectorRepository;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +18,9 @@ import java.util.List;
 @Tag(name = "Setor")
 public class SectorController {
 
-    final private SectorRepository sectorRepository;
+    @Autowired
+    private SectorRepository sectorRepository;
 
-    public SectorController(SectorRepository sectorRepository) {
-        this.sectorRepository = sectorRepository;
-    }
 
     @GetMapping
     public List<Sector> listAllSector(){

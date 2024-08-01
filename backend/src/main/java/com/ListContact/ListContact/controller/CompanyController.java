@@ -1,13 +1,16 @@
 package com.ListContact.ListContact.controller;
 
 
+import com.ListContact.ListContact.model.City.City;
 import com.ListContact.ListContact.model.company.Company;
 import com.ListContact.ListContact.model.company.CompanyDto;
+import com.ListContact.ListContact.repository.CityRepository;
 import com.ListContact.ListContact.repository.CompanyRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +21,11 @@ import java.util.List;
 @RequestMapping("/api/company")
 public class CompanyController {
 
-    final private CompanyRepository companyRepository;
+    @Autowired
+    private CompanyRepository companyRepository;
 
-    public CompanyController(CompanyRepository companyRepository) {
-        this.companyRepository = companyRepository;
-    }
+    @Autowired
+    private CityRepository cityRepository;
 
     @GetMapping
     public List<Company> listAllCompany(){
@@ -47,10 +50,13 @@ public class CompanyController {
     @PostMapping("/create")
     public ResponseEntity<Company> createCompany (@RequestBody @Valid CompanyDto data) {
 
-            Company nameExisting = companyRepository.findByNameCompany(data.nome());
-            if (nameExisting == null) {
+            City nameCity = cityRepository.findByNameCity(data.nomeCity());
+            long countCity = cityRepository.countByNameCity(data.nomeCity());
+            
+            if (countCity <= 1) {
                 Company newCompany = new Company();
                 newCompany.setNameCompany(data.nome());
+                newCompany.setId_city(nameCity);
                 companyRepository.save(newCompany);
                 return ResponseEntity.status(HttpStatus.CREATED).body(newCompany);
             }

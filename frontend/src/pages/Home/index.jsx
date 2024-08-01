@@ -1,22 +1,37 @@
+import { useEffect, useState } from "react";
 import Cards from "../../components/Cards/index";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
-
+import { findAll } from "../../Services/company";
 
 function Home() {
+  const [nome, setNome] = useState([]);
+
+  const findAllCompany = async () => {
+    try {
+      const response = await findAll();
+      const companyNamesSet = new Set(response.data.map((i) => i.nameCompany));
+      const uniqueCompanyNames = Array.from(companyNamesSet);
+      setNome(uniqueCompanyNames);
+      
+      uniqueCompanyNames.forEach((name) => {
+        console.log(name);
+      });
+    } catch (error) {
+      console.error("Erro ao buscar empresas:", error);
+    }
+  };
+
+  useEffect(() => {
+    findAllCompany();
+  }, []);
+
   return (
     <Container>
-      <Header/>
-      <Cards nome="Topazio" />
-      <Cards nome="Jade" />
-      <Cards nome="Cristal" />
-      <Cards nome="Peugeot" />
-      <Cards nome="Citroen" />
-      <Cards nome="Itadil" />
-      <Cards nome="Itamadil" />
-      <Cards nome="Rubi" />
-      <Cards nome="Seminovos" />
-      <Cards nome="Consorcio" />
+      <Header />
+      {nome.map((i) => (
+        <Cards key={i} nome={i} />
+      ))}
     </Container>
   );
 }

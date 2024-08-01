@@ -4,6 +4,9 @@ import Header from "../../components/Header";
 import NameCity from "../../components/NameCity";
 
 function ListCity() {
+
+
+  
   return (
     <>
       <Header />
@@ -14,12 +17,7 @@ function ListCity() {
         <Link to="/agenda">
           <NameCity name="Feira de Santana" />
         </Link>
-        <NameCity name="Feira de Santana" />
-        <NameCity name="Feira de Santana" />
-        <NameCity name="Feira de Santana" />
-        <NameCity name="Feira de Santana" />
-        <NameCity name="Feira de Santana" />
-        <NameCity name="Feira de Santana" />
+        
       </ContainerList>
     </>
   );

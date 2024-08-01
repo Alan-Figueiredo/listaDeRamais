@@ -1,5 +1,6 @@
 package com.ListContact.ListContact.repository;
 
+
 import com.ListContact.ListContact.model.company.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,5 @@
 package com.ListContact.ListContact.model.contacts;
+import com.ListContact.ListContact.model.City.City;
 import com.ListContact.ListContact.model.company.Company;
 import com.ListContact.ListContact.model.sector.Sector;
 import jakarta.persistence.*;
@@ -20,6 +21,10 @@ public class Contact {
     @ManyToOne
     @JoinColumn(name = "idSector")
     private Sector idSector;
+
+    @ManyToOne
+    @JoinColumn(name = "idCity")
+    private City idCity;
 
     public int getIdContact() {
         return idContact;
@@ -59,5 +64,13 @@ public class Contact {
 
     public void setIdSector(Sector nameSector) {
         this.idSector = nameSector;
+    }
+
+    public City getIdCity() {
+        return idCity;
+    }
+
+    public void setIdCity(City nameCity) {
+        this.idCity = nameCity;
     }
 }

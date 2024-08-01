@@ -41,6 +41,13 @@ public class SecurityConf {
                         .requestMatchers(HttpMethod.PATCH, "/api/company/{idCompany}").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/company/{idCompany}").permitAll()
 
+                        // City
+                        .requestMatchers(HttpMethod.GET, "/api/city").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/city/{idCity}").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/city/create").permitAll()
+                        .requestMatchers(HttpMethod.PATCH, "/api/city/{idCity}").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/api/city/{idCity}").permitAll()
+
                         // Sector
                         .requestMatchers(HttpMethod.GET, "/api/sector").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/sector/{idSector}").permitAll()

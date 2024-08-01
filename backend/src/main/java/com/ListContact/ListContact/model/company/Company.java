@@ -1,8 +1,7 @@
 package com.ListContact.ListContact.model.company;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.ListContact.ListContact.model.City.City;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_company")
@@ -12,6 +11,11 @@ public class Company {
     private int idCompany;
 
     private String nameCompany;
+
+    @ManyToOne
+    @JoinColumn(name = "idCity")
+    private City idCity;
+
 
     public int getIdCompany() {
         return idCompany;
@@ -29,5 +33,11 @@ public class Company {
         this.nameCompany = nome;
     }
 
+    public City getId_city() {
+        return idCity;
+    }
 
+    public void setId_city(City nameCity) {
+        this.idCity = nameCity;
+    }
 }
