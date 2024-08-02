@@ -10,6 +10,7 @@ function Home() {
   const findAllCompany = async () => {
     try {
       const response = await findAll();
+      console.log(response)
       const companyNamesSet = new Set(response.data.map((i) => i.nameCompany));
       const uniqueCompanyNames = Array.from(companyNamesSet);
       setNome(uniqueCompanyNames);

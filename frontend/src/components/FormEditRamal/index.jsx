@@ -11,12 +11,14 @@ function FormEditRamal() {
   const [nome, setNome] = useState("");
   const [setor, setSetor] = useState("");
   const [empresa, setEmpresa] = useState("");
+  const [city, setCity] = useState("");
   const [error, setError] = useState(null);
 
   const handleRamal = (event) => setRamal(event.target.value);
   const handleNome = (event) => setNome(event.target.value);
   const handleSetor = (event) => setSetor(event.target.value);
   const handleEmpresa = (event) => setEmpresa(event.target.value);
+  const handleCity = (event) => setCity(event.target.value);
 
   const createRamal = async () => {
     const data = {
@@ -24,6 +26,7 @@ function FormEditRamal() {
       ramal: ramal,
       nomeCompany: empresa,
       nomeSector: setor,
+      nomeCity : city
     };
 
     try {
@@ -44,6 +47,8 @@ function FormEditRamal() {
           <input type="text" onChange={handleNome}></input>
           <h4>Setor</h4>
           <input type="text" onChange={handleSetor}></input>
+          <h4>Cidade</h4>
+          <input type="text" onChange={handleCity}></input>
           <h4>Empresa</h4>
           <input type="text" onChange={handleEmpresa}></input>
           <Link to="/pageAdmin">
