@@ -16,6 +16,7 @@ function FormEditRamal() {
   const [nome, setNome] = useState(contact ? contact.nome : "");
   const [setor, setSetor] = useState(contact ? contact.setor : "");
   const [empresa, setEmpresa] = useState(contact ? contact.empresa : "");
+  const [city, setCity] = useState(contact ? contact.city : "");
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -24,13 +25,15 @@ function FormEditRamal() {
       setNome(contact.nome);
       setSetor(contact.setor);
       setEmpresa(contact.empresa);
+      setCity(contact.city);
     }
   }, [contact]);
-
+  
   const handleRamal = (event) => setRamal(event.target.value);
   const handleNome = (event) => setNome(event.target.value);
   const handleSetor = (event) => setSetor(event.target.value);
   const handleEmpresa = (event) => setEmpresa(event.target.value);
+  const handleCity = (event) => setCity(event.target.value);
 
   const updateRamal = async () => {
     const data = {
@@ -38,10 +41,13 @@ function FormEditRamal() {
       ramal: ramal,
       nomeCompany: empresa,
       nomeSector: setor,
+      nomeCity: city,
     };
 
     try {
-      await updateContact(intId, data);
+      console.log(data)
+      const response = await updateContact(intId, data);
+      console.log(response)
     } catch (e) {
       setError("Erro ao atualizar contato " + e);
     }
@@ -60,6 +66,8 @@ function FormEditRamal() {
           <input type="text" value={setor} onChange={handleSetor}></input>
           <h4>Empresa</h4>
           <input type="text" value={empresa} onChange={handleEmpresa}></input>
+          <h4>Cidade</h4>
+          <input type="text" value={city} onChange={handleCity}></input>
           <Link to="/pageAdmin">
             <ButtonCustom event={updateRamal} nome="Salvar" />
           </Link>

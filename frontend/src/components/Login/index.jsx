@@ -3,6 +3,7 @@ import styles from "./Login.module.css";
 import { useState } from "react";
 import { login } from "../../Services/auth/authService";
 import ApiException from "../../Config/api/apiException";
+import iconeLogin from "../../assets/iconeLogin.png"
 
 function Login() {
   const [user, setUser] = useState("");
@@ -36,7 +37,7 @@ function Login() {
     <div className={styles.containerLogin}>
       <div className={styles.divLogin}>
         <img
-          src={require("../../assets/iconeLogin.png")}
+          src={iconeLogin}
           alt="login"
           className={styles.imgLogin}
         />

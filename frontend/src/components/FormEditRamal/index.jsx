@@ -26,7 +26,7 @@ function FormEditRamal() {
       ramal: ramal,
       nomeCompany: empresa,
       nomeSector: setor,
-      nomeCity : city
+      nomeCity: city,
     };
 
     try {

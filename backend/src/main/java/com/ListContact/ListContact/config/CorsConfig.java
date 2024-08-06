@@ -14,11 +14,11 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 
-        String localHostServer = "http://"+ localIpAddress + ":3000";
+        String localHostServer = "http://"+ localIpAddress + ":5173";
 
         registry.addMapping("/**")
                 .allowedOrigins(localHostServer) // adicionar o IP do servidor
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins("http://localhost:5173")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT", "PATCH")
                 .allowedHeaders("*")
                 .allowCredentials(true);

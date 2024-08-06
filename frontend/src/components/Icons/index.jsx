@@ -25,6 +25,7 @@ function Icons({ indexRow }) {
   };
 
   const editContact = () => {
+    console.log(indexRow)
     navigate(`/pageEdit/${indexRow.id}`, { state: { contact: indexRow } });
   };
 

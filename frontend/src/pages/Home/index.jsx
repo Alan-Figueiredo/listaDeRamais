@@ -16,7 +16,7 @@ function Home() {
       setNome(uniqueCompanyNames);
       
       uniqueCompanyNames.forEach((name) => {
-        console.log(name);
+       
       });
     } catch (error) {
       console.error("Erro ao buscar empresas:", error);

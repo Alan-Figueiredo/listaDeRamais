@@ -12,14 +12,13 @@ function TableAdmin() {
     const findAllContacts = async () => {
       try {
         const response = await findAll();
-        console.log(response.data)
         const dataFull = response.data.map((i) => ({
           id: i.idContact,
           ramal: i.number,
           nome: i.nameContact,
-          empresa: i.idCompany.nameCompany,
-          setor: i.idSector.nameSector,
-          city : i.idCity.nameCity
+          empresa: i.idCompany?.nameCompany || "",
+          setor: i.idSector?.nameSector || "",
+          city: i.idCity?.nameCity || "",
         }));
         setData(dataFull);
       } catch (e) {
@@ -52,7 +51,7 @@ function TableAdmin() {
             <td>{item.nome}</td>
             <td>{item.empresa}</td>
             <td>{item.setor}</td>
-            <td>{item.city.replace(/_/g, ' ')}</td>
+            <td>{item.city.replace(/_/g, " ")}</td>
             <td>
               <Icons indexRow={item} />
             </td>

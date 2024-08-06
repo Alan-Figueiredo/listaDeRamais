@@ -48,9 +48,11 @@ public class ContactController {
 
     @PostMapping("/create")
     public ResponseEntity<Contact> createContact(@RequestBody @Valid ContactDto data) {
-        Company company = companyRepository.findByNameCompany(data.nomeCompany());
-        Sector sector = sectorRepository.findByNameSector(data.nomeSector());
+        System.out.println("Criar contato "+data);
         City city = cityRepository.findByNameCity(data.nomeCity());
+        Company company = companyRepository.findByNameCompanyAndCityName(data.nomeCompany(), data.nomeCity());
+        Sector sector = sectorRepository.findByNameSector(data.nomeSector());
+
         if (company == null || sector == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
@@ -73,8 +75,9 @@ public class ContactController {
                 .map(result -> {
                     result.setNameContact(data.nome());
                     result.setNumber(data.ramal());
-                    result.setIdCompany(companyRepository.findByNameCompany(data.nomeCompany()));
+                    result.setIdCompany( companyRepository.findByNameCompanyAndCityName(data.nomeCompany(), data.nomeCity()));
                     result.setIdSector(sectorRepository.findByNameSector(data.nomeSector()));
+                    result.setIdCity(cityRepository.findByNameCity(data.nomeCity()));
                     contactRepository.save(result);
                     return ResponseEntity.status(HttpStatus.OK).body(result);
                 })

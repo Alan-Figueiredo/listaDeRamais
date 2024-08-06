@@ -9,7 +9,7 @@ function Header() {
         <img src={LogoItadil} alt="Grupo itadil" className={styles.logo} />
       </Link>
       <nav>
-        <a href="#">Precisa de ajuda? Contate-nos</a>
+        Precisa de ajuda? Contate-nos
       </nav>
     </header>
   );
