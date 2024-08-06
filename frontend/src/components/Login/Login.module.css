@@ -1,0 +1,48 @@
+.containerLogin {
+  background-color: #ffff ;
+  margin-top: 15rem;
+  width: 20rem;
+  height: 20rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #004866;
+}
+
+.divLogin {
+  margin-top: 5px;
+  padding: 5px;
+  width: 15rem;
+  border-radius: 5px;
+  border: 2px solid #004866;
+}
+
+.inputLogin {
+  margin-top: 5px;
+  padding: 5px;
+  width: 13rem;
+  border-radius: 5px;
+  border: 2px solid #004866;
+}
+
+.buttonLogin {
+  margin-top: 8px;
+  border-radius: 8px;
+  padding: 6px 15px;
+  background-color: #004866;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.buttonLogin:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px white;
+}
+.imgLogin {
+
+  display: block;
+  margin-left: 3.5rem;
+  
+}

@@ -1,0 +1,16 @@
+.containerExit {
+  margin-left: 50rem;
+}
+
+.buttonName {
+  padding: 3px 10px;
+  box-shadow: 5px 5px 5px black;
+  background-color: #ff0000;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buttonIcon {
+  font-size: 1.5rem;
+}
