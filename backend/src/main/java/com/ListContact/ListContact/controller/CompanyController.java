@@ -27,6 +27,7 @@ public class CompanyController {
     @Autowired
     private CityRepository cityRepository;
 
+
     @GetMapping
     public List<Company> listAllCompany(){
         return companyRepository.findAll();
@@ -39,6 +40,10 @@ public class CompanyController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/name/{nameCompany}")
+    public List<Company> getNameCompany(@PathVariable @Valid String nameCompany){
+        return companyRepository.findByNameCompany(nameCompany);
+    }
 
     @Operation(summary = "Criar uma empresa",
             method = "POST",

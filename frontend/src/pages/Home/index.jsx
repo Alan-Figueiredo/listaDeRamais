@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Cards from "../../components/Cards/index";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
-import { findAll } from "../../Services/company";
+import { findAll } from "../../Services/company/companyService";
 
 function Home() {
   const [nome, setNome] = useState([]);
@@ -10,7 +10,6 @@ function Home() {
   const findAllCompany = async () => {
     try {
       const response = await findAll();
-      console.log(response)
       const companyNamesSet = new Set(response.data.map((i) => i.nameCompany));
       const uniqueCompanyNames = Array.from(companyNamesSet);
       setNome(uniqueCompanyNames);

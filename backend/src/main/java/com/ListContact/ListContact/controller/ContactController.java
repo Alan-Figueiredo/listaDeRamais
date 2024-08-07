@@ -33,6 +33,7 @@ public class ContactController {
     @Autowired
     private CityRepository cityRepository;
 
+
     @GetMapping
     public List<Contact> listAllCompany(){
         return contactRepository.findAll();

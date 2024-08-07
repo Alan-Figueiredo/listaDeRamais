@@ -37,6 +37,7 @@ public class SecurityConf {
                         // Company
                         .requestMatchers(HttpMethod.GET, "/api/company").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/company/{idCompany}").permitAll()
+                        .requestMatchers(HttpMethod.GET,  "/api/company/name/{nameCompany}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/company/create").permitAll()
                         .requestMatchers(HttpMethod.PATCH, "/api/company/{idCompany}").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/company/{idCompany}").permitAll()

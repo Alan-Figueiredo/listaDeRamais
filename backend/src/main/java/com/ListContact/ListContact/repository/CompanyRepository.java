@@ -7,9 +7,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface CompanyRepository extends JpaRepository<Company, Integer> {
 
-    Company findByNameCompany(String companyName); // nameCompany
+    List<Company> findByNameCompany(String companyName); // nameCompany
 
     @Query("SELECT c FROM Company c JOIN c.idCity ci WHERE c.nameCompany = :companyName AND ci.nameCity = :cityName")
     Company findByNameCompanyAndCityName(@Param("companyName") String companyName, @Param("cityName") String cityName);
