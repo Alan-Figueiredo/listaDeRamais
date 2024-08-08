@@ -9,6 +9,15 @@ const findAll = async () => {
   }
 };
 
+const findContactCity = async (nameCity) => {
+  try {
+    const response = await api.get(`/contact/contactcity/${nameCity}`);
+    return response;
+  } catch (e) {
+    throw e;
+  }
+};
+
 const createContact = async (data) => {
   try {
     const response = await api.post("/contact/create", data);
@@ -27,13 +36,19 @@ const deleteContact = async (id) => {
   }
 };
 
-const updateContact = async (id,data) => {
+const updateContact = async (id, data) => {
   try {
-    const response = await api.patch(`/contact/${id}`,data);
+    const response = await api.patch(`/contact/${id}`, data);
     return response;
   } catch (e) {
     throw e;
   }
 };
 
-export { findAll, createContact, deleteContact, updateContact };
+export {
+  findAll,
+  createContact,
+  deleteContact,
+  updateContact,
+  findContactCity,
+};

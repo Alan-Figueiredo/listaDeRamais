@@ -2,20 +2,33 @@ import Header from "../../components/Header";
 import ContainerAgenda from "../../components/Container/containerAgenda";
 import BoxAgenda from "../../components/BoxAgenda";
 import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { findContactCity } from "../../Services/contact/contactService";
 
 function Agenda() {
+  const [nameSector, setNameSector] = useState([]);
   const location = useLocation();
   const nameImage = location.state?.objNameCity;
 
-  console.log(nameImage)
-  
+  useEffect(() => {
+    if (nameImage) {
+      const findNameCity = async () => {
+        const response = await findContactCity(nameImage);
+        const dataSector = response.data.map((i) => ({
+          sectorName: i.idSector.nameSector,
+        }));
+        setNameSector(dataSector);
+      };
+      findNameCity();
+    }
+  }, [nameImage]);
   return (
     <>
       <Header />
       <ContainerAgenda>
-        <BoxAgenda setor="vendas" />
-        <BoxAgenda setor="pos vendas" />
-        <BoxAgenda setor="peças" />
+        {nameSector.map((item, i) => (
+          <BoxAgenda key={i} name={item.sectorName} />
+        ))}
       </ContainerAgenda>
     </>
   );

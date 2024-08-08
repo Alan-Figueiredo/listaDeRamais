@@ -1,10 +1,10 @@
 import styles from "./BoxAgenda.module.css";
 import Table from "../Table";
 
-function BoxAgenda({ setor }) {
+function BoxAgenda({ name }) {
   return (
     <div className={styles.containerBox}>
-      <div className={styles.titleSetor}>{setor}</div>
+      <div className={styles.titleSetor}>{name}</div>
       <>
         <Table />
       </>
