@@ -51,7 +51,7 @@ function TableAdmin() {
             <td>{item.nome}</td>
             <td>{item.empresa}</td>
             <td>{item.setor}</td>
-            <td>{item.city.replace(/_/g, " ")}</td>
+            <td>{item.city}</td>
             <td>
               <Icons indexRow={item} />
             </td>

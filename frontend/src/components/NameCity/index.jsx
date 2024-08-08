@@ -1,10 +1,12 @@
 import styles from "./NameCity.module.css";
 
-function NameCity({ name }) {
+function NameCity({ name, event }) {
   return (
-    <div className={styles.containerList}>
-      <h3>{name}</h3>
-    </div>
+    <button className={styles.containerList} onClick={event}>
+      <div>
+        <h3>{name}</h3>
+      </div>
+    </button>
   );
 }
 

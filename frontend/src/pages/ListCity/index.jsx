@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import ContainerList from "../../components/Container/containerList";
 import Header from "../../components/Header";
 import NameCity from "../../components/NameCity";
@@ -9,6 +9,7 @@ function ListCity() {
   const [nameData, setNameData] = useState([]);
   const location = useLocation();
   const nameImage = location.state?.objNameCity;
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (nameImage) {
@@ -26,6 +27,11 @@ function ListCity() {
       getNameCompany();
     }
   }, [nameImage]);
+
+  const nameImg = (cityName) => {
+    navigate(`/agenda`, { state: { objNameCity: cityName } });
+  };
+
   return (
     <>
       <Header />
@@ -33,10 +39,8 @@ function ListCity() {
         <h2 style={{ padding: 80, color: "#004866" }}>
           Por favor, selecione uma filial:
         </h2>
-        {nameData.map((item,i) => (
-          <Link key={i} to="/agenda">
-            <NameCity name={item.cityName.replace(/_/g, " ")} />
-          </Link>
+        {nameData.map((item, i) => (
+          <NameCity key={i} name={item.cityName} event={() => nameImg(item.cityName)} />
         ))}
       </ContainerList>
     </>

@@ -7,7 +7,8 @@ function Table() {
         <tr>
           <th>Ramal</th>
           <th>Name</th>
-          <th>Departamento</th>
+          <th>Setor</th>
+          <th>Cidade</th>
         </tr>
       </thead>
       <tbody>
@@ -15,25 +16,30 @@ function Table() {
           <td>1asassaasas</td>
           <td>Domenic</td>
           <td>asasasasaassasaasasasaassa</td>
+          <td>asasasasaassasaasasasaassa</td>
         </tr>
         <tr>
           <td>1</td>
           <td>Domenic</td>
+          <td>88,110</td>
           <td>88,110</td>
         </tr>
         <tr>
           <td>1</td>
           <td>Domenic</td>
           <td>88,110</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Domenic</td>
           <td>88,110</td>
         </tr>
         <tr>
           <td>1</td>
           <td>Domenic</td>
+          <td>88,110</td>
+          <td>88,110</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Domenic</td>
+          <td>88,110</td>
           <td>88,110</td>
         </tr>
       </tbody>

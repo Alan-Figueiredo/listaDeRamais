@@ -13,10 +13,6 @@ function Home() {
       const companyNamesSet = new Set(response.data.map((i) => i.nameCompany));
       const uniqueCompanyNames = Array.from(companyNamesSet);
       setNome(uniqueCompanyNames);
-      
-      uniqueCompanyNames.forEach((name) => {
-       
-      });
     } catch (error) {
       console.error("Erro ao buscar empresas:", error);
     }

@@ -59,6 +59,8 @@ public class SecurityConf {
                         // Contact
                         .requestMatchers(HttpMethod.GET, "/api/contact").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/contact/{idContact}").permitAll()
+                        .requestMatchers(HttpMethod.GET,"api/contact/contactsector/{nameSector}").permitAll()
+                        .requestMatchers(HttpMethod.GET,"api/contact/contactcity/{nameCity}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/contact/create").permitAll()
                         .requestMatchers(HttpMethod.PATCH, "/api/contact/{idContact}").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/contact/{idContact}").permitAll()

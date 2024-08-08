@@ -7,21 +7,45 @@ VALUES
     ("rh"),
     ("financeiro"),
     ("contabilidade"),
-    ("vendas_novos"),
+    ("vendas novos"),
     ("pecas"),
-    ("pos_vendas"),
-    ("vendas_usados");
+    ("pos vendas"),
+    ("vendas usados");
 
 
 INSERT INTO tb_city (name_city)
 VALUES
-    ("feira_de_santana"),
+    ("feira de santana"),
     ("itabuna"),
-    ("teixeira_de_freitas"),
+    ("teixeira de freitas"),
     ("jequie"),
     ("irece"),
-    ("paulo_afonso"),
+    ("paulo afonso"),
     ("eunapolis"),
-    ("vitoria_da_conquista"),
+    ("vitoria da conquista"),
     ("petrolina"),
     ("juazeiro");
+
+INSERT INTO tb_company (name_company,id_city)
+VALUES
+    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'feira de santana')),
+    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
+    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'teixeira de freitas')),
+    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'jequie')),
+    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'irece')),
+    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'paulo afonso')),
+    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'eunapolis')),
+    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'juazeiro')),
+    ('rubi', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
+    ('rubi', (SELECT id_city FROM tb_city WHERE name_city = 'eunapolis')),
+    ('rubi', (SELECT id_city FROM tb_city WHERE name_city = 'petrolina')),
+    ('peugeot', (SELECT id_city FROM tb_city WHERE name_city = 'feira de santana')),
+    ('jade', (SELECT id_city FROM tb_city WHERE name_city = 'feira de santana')),
+    ('jade', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
+    ('jade', (SELECT id_city FROM tb_city WHERE name_city = 'teixeira de freitas')),
+    ('jade', (SELECT id_city FROM tb_city WHERE name_city = 'vitoria da conquista')),
+    ('itamadil', (SELECT id_city FROM tb_city WHERE name_city = 'teixeira de freitas')),
+    ('itadil', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
+    ('cristal', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
+    ('cristal', (SELECT id_city FROM tb_city WHERE name_city = 'teixeira de freitas')),
+    ('citroen', (SELECT id_city FROM tb_city WHERE name_city = 'feira de santana'));

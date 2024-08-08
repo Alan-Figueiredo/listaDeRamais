@@ -47,6 +47,16 @@ public class ContactController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/contactsector/{nameSector}")
+    public List<Contact> getContactSector(@PathVariable @Valid String nameSector){
+        return contactRepository.findByIdSector(nameSector);
+    }
+
+    @GetMapping("/contactcity/{nameCity}")
+    public List<Contact> getContactCity(@PathVariable @Valid String nameCity){
+        return contactRepository.findByIdCity(nameCity);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<Contact> createContact(@RequestBody @Valid ContactDto data) {
         System.out.println("Criar contato "+data);
