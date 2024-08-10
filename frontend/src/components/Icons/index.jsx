@@ -15,8 +15,7 @@ function Icons({ indexRow }) {
   };
 
   const confirmClearContact = async () => {
-    const response = await deleteContact(indexRow.id);
-    console.log(response.status);
+    await deleteContact(indexRow.id);
     setIsModalVisible(false);
   };
 
@@ -25,7 +24,6 @@ function Icons({ indexRow }) {
   };
 
   const editContact = () => {
-    console.log(indexRow)
     navigate(`/pageEdit/${indexRow.id}`, { state: { contact: indexRow } });
   };
 

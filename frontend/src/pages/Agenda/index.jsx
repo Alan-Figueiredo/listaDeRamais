@@ -17,8 +17,14 @@ function Agenda() {
         const dataSector = response.data.map((i) => ({
           sectorName: i.idSector.nameSector,
         }));
-        setNameSector(dataSector);
+        const uniqueSectors = Array.from(
+          new Set(dataSector.map((item) => item.sectorName))
+        ).map((sectorName) => {
+          return dataSector.find((item) => item.sectorName === sectorName);
+        });
+        setNameSector(uniqueSectors);
       };
+
       findNameCity();
     }
   }, [nameImage]);

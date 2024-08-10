@@ -18,6 +18,15 @@ const findContactCity = async (nameCity) => {
   }
 };
 
+const findContactSector = async (nameSector) => {
+  try {
+    const response = await api.get(`/contact/contactsector/${nameSector}`);
+    return response;
+  } catch (e) {
+    throw e;
+  }
+};
+
 const createContact = async (data) => {
   try {
     const response = await api.post("/contact/create", data);
@@ -51,4 +60,5 @@ export {
   deleteContact,
   updateContact,
   findContactCity,
+  findContactSector,
 };

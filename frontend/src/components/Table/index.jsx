@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react";
 import styles from "./Table.module.css";
+import { findContactSector } from "../../Services/contact/contactService";
 
-function Table() {
+function Table({ setor }) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const findNameSector = async () => {
+      const response = await findContactSector(setor);
+      const dataSector = response.data.map((i) => ({
+        ramal: i.number,
+        nome: i.nameContact,
+        setor: i.idSector.nameSector,
+        cidade: i.idCity.nameCity,
+      }));
+      setData(dataSector);
+    };
+    findNameSector();
+  }, [setor]);
   return (
     <table className={styles.containerTable}>
       <thead>
@@ -12,36 +29,14 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1asassaasas</td>
-          <td>Domenic</td>
-          <td>asasasasaassasaasasasaassa</td>
-          <td>asasasasaassasaasasasaassa</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Domenic</td>
-          <td>88,110</td>
-          <td>88,110</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Domenic</td>
-          <td>88,110</td>
-          <td>88,110</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Domenic</td>
-          <td>88,110</td>
-          <td>88,110</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Domenic</td>
-          <td>88,110</td>
-          <td>88,110</td>
-        </tr>
+        {data.map((item, i) => (
+          <tr key={i}>
+            <td>{item.ramal}</td>
+            <td>{item.nome}</td>
+            <td>{item.setor}</td>
+            <td>{item.cidade}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

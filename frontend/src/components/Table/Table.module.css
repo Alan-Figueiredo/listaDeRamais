@@ -1,9 +1,10 @@
 .containerTable {
   border-collapse: collapse;
-  width: 23.5rem;
+  width: 50%;
   display: inline-table;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
+  
 }
 
 .containerTable thead th {
