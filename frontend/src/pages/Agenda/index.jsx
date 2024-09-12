@@ -10,29 +10,42 @@ function Agenda() {
   const location = useLocation();
   const nameImageCity = location.state?.objNameCity;
   const nameImageHome = location.state?.objImageHome;
-  
+
   useEffect(() => {
     if (nameImageCity) {
-        const findNameCity = async () => {
-        const response = await findContactCity(nameImageCity);
-        const dataSector = response.data.map((i) => ({
-          sectorName: i.idSector.nameSector,
-          cityName : i.idCity.nameCity,
-        }));
-        console.log(dataSector)
-        const uniqueSectors = Array.from(
-          new Set(dataSector.map((item) => `${item.sectorName}|${item.cityName}`))
-          ).map((combinedKey) => {
-          const [sectorName, cityName] = combinedKey.split('|');
-          return dataSector.find((item) => item.sectorName === sectorName && item.cityName === cityName);
-        });
-        setNameSector(uniqueSectors);
+      const findNameCity = async () => {
+        try {
+          const response = await findContactCity(nameImageCity);
+          const dataSector = response.data.map((i) => ({
+            sectorName: i.idSector.nameSector,
+            cityName: i.idCity.nameCity,
+            companyName: i.idCompany.nameCompany,
+          }));
+          console.log('Dados da API:', response.data);
+          
+          // Filtra os setores onde cityName é igual a nameImageHome
+          const filteredSectors = dataSector.filter(item => item.cityName === nameImageHome);
+          console.log(dataSector.filter(item => item.cityName === nameImageHome))
+          // Remove setores duplicados
+          const uniqueSectors = Array.from(
+            new Set(filteredSectors.map(item => item.sectorName))
+          ).map(sectorName => {
+            return filteredSectors.find(item => item.sectorName === sectorName);
+          });
+
+          setNameSector(uniqueSectors);
+        } catch (error) {
+          console.error('Erro ao buscar contatos da cidade:', error);
+        }
       };
 
       findNameCity();
     }
-  }, [nameImageCity]);
-  console.log(nameSector)
+  }, [nameImageCity, nameImageHome]);
+
+  console.log("Nome da loja:", nameImageHome);
+  console.log("Setores:", nameSector);
+
   return (
     <>
       <Header />
