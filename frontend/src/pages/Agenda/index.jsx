@@ -8,31 +8,31 @@ import { findContactCity } from "../../Services/contact/contactService";
 function Agenda() {
   const [nameSector, setNameSector] = useState([]);
   const location = useLocation();
-  const nameImage = location.state?.objNameCity;
+  const nameImageCity = location.state?.objNameCity;
+  const nameImageHome = location.state?.objImageHome;
   
   useEffect(() => {
-    if (nameImage) {
+    if (nameImageCity) {
         const findNameCity = async () => {
-        const response = await findContactCity(nameImage);
-        console.log(response.data)
+        const response = await findContactCity(nameImageCity);
         const dataSector = response.data.map((i) => ({
           sectorName: i.idSector.nameSector,
           cityName : i.idCity.nameCity,
         }));
-        
+        console.log(dataSector)
         const uniqueSectors = Array.from(
-          new Set(dataSector.map((item) => item.sectorName))
-        ).map((sectorName) => {
-          //console.log("Setor "+sectorName)
-          console.log(dataSector)
-          return dataSector.find((item) => item.sectorName === sectorName);
+          new Set(dataSector.map((item) => `${item.sectorName}|${item.cityName}`))
+          ).map((combinedKey) => {
+          const [sectorName, cityName] = combinedKey.split('|');
+          return dataSector.find((item) => item.sectorName === sectorName && item.cityName === cityName);
         });
         setNameSector(uniqueSectors);
       };
 
       findNameCity();
     }
-  }, [nameImage]);
+  }, [nameImageCity]);
+  console.log(nameSector)
   return (
     <>
       <Header />
