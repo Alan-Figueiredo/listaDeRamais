@@ -3,6 +3,7 @@ import ContainerAdmin from "../../components/Container/containerAdmin";
 import TableAdmin from "../../components/Table/tableAdmin";
 import Banner from "../../components/Banner";
 import Exit from "../../components/Exit";
+
 function PageAdmin() {
   return (
     <>

@@ -6,7 +6,7 @@ import { useState } from "react";
 import { createContact } from "../../Services/contact/contactService";
 import ApiException from "../../Config/api/apiException";
 
-function FormEditRamal() {
+function FormNewRamal() {
   const [ramal, setRamal] = useState("");
   const [nome, setNome] = useState("");
   const [setor, setSetor] = useState("");
@@ -51,7 +51,7 @@ function FormEditRamal() {
           <input type="text" onChange={handleCity}></input>
           <h4>Empresa</h4>
           <input type="text" onChange={handleEmpresa}></input>
-          <Link to="/pageAdmin">
+          <Link to="/page-admin">
             <ButtonCustom event={createRamal} nome="Salvar" />
           </Link>
           {error && <ApiException message={error} />}
@@ -61,4 +61,4 @@ function FormEditRamal() {
   );
 }
 
-export default FormEditRamal;
+export default FormNewRamal;

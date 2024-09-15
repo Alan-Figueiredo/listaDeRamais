@@ -3,7 +3,7 @@ import styles from "./Login.module.css";
 import { useState } from "react";
 import { login } from "../../Services/auth/authService";
 import ApiException from "../../Config/api/apiException";
-import iconeLogin from "../../assets/iconeLogin.png"
+import iconeLogin from "../../assets/iconeLogin.png";
 
 function Login() {
   const [user, setUser] = useState("");
@@ -23,7 +23,7 @@ function Login() {
     try {
       await login(data);
       setError(null);
-      navigate("/pageAdmin");
+      navigate("/page-admin");
     } catch (e) {
       setError("Login ou Senha incorretos");
 
@@ -36,11 +36,7 @@ function Login() {
   return (
     <div className={styles.containerLogin}>
       <div className={styles.divLogin}>
-        <img
-          src={iconeLogin}
-          alt="login"
-          className={styles.imgLogin}
-        />
+        <img src={iconeLogin} alt="login" className={styles.imgLogin} />
         <input
           type="text"
           placeholder="username"

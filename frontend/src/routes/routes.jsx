@@ -1,23 +1,23 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
-import ListCity from "../pages/ListCity";
-import Agenda from "../pages/Agenda";
-import Admin from "../pages/Admin";
-import PageAdmin from "../pages/PageAdmin";
-import PageEditRamal from "../pages/PageEditRamal";
-import PageEdit from "../pages/PageEditRamal/pageEdit";
+import Home from "../pages/home";
+import ListCity from "../pages/listCity";
+import Agenda from "../pages/agenda";
+import Admin from "../pages/admin";
+import PageAdmin from "../pages/pageAdmin";
+import PageNewRamal from "../pages/pageNewRamal";
+import PageEdit from "../pages/pageNewRamal/pageEdit";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/listCity" element={<ListCity />} />
+        <Route path="/list-city" element={<ListCity />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/pageAdmin" element={<PageAdmin />} />
-        <Route path="/pageEditRamal" element={<PageEditRamal />} />
-        <Route path="/pageEdit/:id" element={<PageEdit />} />
+        <Route path="/page-admin" element={<PageAdmin />} />
+        <Route path="/page-new-ramal" element={<PageNewRamal />} />
+        <Route path="/page-edit/:id" element={<PageEdit />} />
       </Routes>
     </BrowserRouter>
   );

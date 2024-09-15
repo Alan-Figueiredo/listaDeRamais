@@ -6,7 +6,7 @@ function BackButton() {
   return (
     <>
       <div className={styles.containerExit}>
-        <Link to="/pageAdmin">
+        <Link to="/page-admin">
           <button className={styles.buttonName}>
             BACK
             <RiArrowTurnBackLine className={styles.buttonIcon} />

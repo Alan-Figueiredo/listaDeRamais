@@ -1,18 +1,18 @@
 import HeaderAdmin from "../../components/Header/indexAdmin";
 import ContainerAdmin from "../../components/Container/containerAdmin";
-import FormEditRamal from "../../components/FormEditRamal";
+import FormNewRamal from "../../components/FormEditRamal";
 import BackButton from "../../components/Exit/backbutton";
 
-function PageEditRamal() {
+function PageNewRamal() {
   return (
     <>
       <HeaderAdmin />
       <ContainerAdmin>
         <BackButton/>
-        <FormEditRamal />
+        <FormNewRamal />
       </ContainerAdmin>
     </>
   );
 }
 
-export default PageEditRamal;
+export default PageNewRamal;

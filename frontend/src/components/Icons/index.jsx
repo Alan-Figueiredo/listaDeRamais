@@ -5,7 +5,6 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import { deleteContact } from "../../Services/contact/contactService";
 import { useNavigate } from "react-router-dom";
 
-
 function Icons({ indexRow }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const navigate = useNavigate();
@@ -24,7 +23,7 @@ function Icons({ indexRow }) {
   };
 
   const editContact = () => {
-    navigate(`/pageEdit/${indexRow.id}`, { state: { contact: indexRow } });
+    navigate(`/page-edit/${indexRow.id}`, { state: { contact: indexRow } });
   };
 
   return (

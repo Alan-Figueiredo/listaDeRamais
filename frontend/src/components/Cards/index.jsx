@@ -12,7 +12,7 @@ function Cards({ nome }) {
   }
 
   const nameImg = () => {
-    navigate(`/listCity`, { state: { objNameCity: nome } });
+    navigate(`/list-city`, { state: { objNameCity: nome } });
   };
   return (
     <div className={styles.cards}>

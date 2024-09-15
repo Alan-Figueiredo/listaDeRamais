@@ -7,12 +7,12 @@ import { findAll } from "../../Services/contact/contactService";
 
 function TableAdmin() {
   const [data, setData] = useState([]);
-  
+
   function capitalize(string) {
-    const exceptions = ['de', 'da', 'do', 'dos', 'das']; // Palavras que não devem ser capitalizadas
+    const exceptions = ["de", "da", "do", "dos", "das"]; // Palavras que não devem ser capitalizadas
     return string
       .toLowerCase()
-      .split(' ')
+      .split(" ")
       .map((word, index) => {
         // Capitaliza a palavra se não for uma exceção ou se for a primeira palavra
         if (exceptions.includes(word) && index !== 0) {
@@ -20,7 +20,7 @@ function TableAdmin() {
         }
         return word.charAt(0).toUpperCase() + word.slice(1);
       })
-      .join(' ');
+      .join(" ");
   }
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function TableAdmin() {
           <th>Setor</th>
           <th>Cidade</th>
           <th>
-            <Link to="/pageEditRamal">
+            <Link to="/page-new-ramal">
               <ButtonCustom nome="Novo Ramal" />
             </Link>
           </th>

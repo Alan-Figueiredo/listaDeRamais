@@ -28,7 +28,7 @@ function FormEditRamal() {
       setCity(contact.city);
     }
   }, [contact]);
-  
+
   const handleRamal = (event) => setRamal(event.target.value);
   const handleNome = (event) => setNome(event.target.value);
   const handleSetor = (event) => setSetor(event.target.value);
@@ -45,9 +45,9 @@ function FormEditRamal() {
     };
 
     try {
-      console.log(data)
+      console.log(data);
       const response = await updateContact(intId, data);
-      console.log(response)
+      console.log(response);
     } catch (e) {
       setError("Erro ao atualizar contato " + e);
     }
@@ -68,7 +68,7 @@ function FormEditRamal() {
           <input type="text" value={empresa} onChange={handleEmpresa}></input>
           <h4>Cidade</h4>
           <input type="text" value={city} onChange={handleCity}></input>
-          <Link to="/pageAdmin">
+          <Link to="/page-admin">
             <ButtonCustom event={updateRamal} nome="Salvar" />
           </Link>
 
