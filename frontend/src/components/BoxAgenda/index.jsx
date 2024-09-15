@@ -1,13 +1,12 @@
 import styles from "./BoxAgenda.module.css";
 import Table from "../Table";
 
-function BoxAgenda({ name }) {
-  
+function BoxAgenda({ name, NameSelectedcity, NameImagehome }) {  
   return (
     <div className={styles.containerBox}>
       <div className={styles.titleSetor}>{name}</div>
       <>
-        <Table setor={name}/>
+        <Table setor={name} NameSelectedcity={NameSelectedcity} NameImagehome={NameImagehome} /> 
       </>
     </div>
   );

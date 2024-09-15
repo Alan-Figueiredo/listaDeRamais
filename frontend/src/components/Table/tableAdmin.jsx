@@ -7,6 +7,21 @@ import { findAll } from "../../Services/contact/contactService";
 
 function TableAdmin() {
   const [data, setData] = useState([]);
+  
+  function capitalize(string) {
+    const exceptions = ['de', 'da', 'do', 'dos', 'das']; // Palavras que não devem ser capitalizadas
+    return string
+      .toLowerCase()
+      .split(' ')
+      .map((word, index) => {
+        // Capitaliza a palavra se não for uma exceção ou se for a primeira palavra
+        if (exceptions.includes(word) && index !== 0) {
+          return word;
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(' ');
+  }
 
   useEffect(() => {
     const findAllContacts = async () => {
@@ -48,10 +63,10 @@ function TableAdmin() {
         {data.map((item, i) => (
           <tr key={i}>
             <td>{item.ramal}</td>
-            <td>{item.nome}</td>
-            <td>{item.empresa}</td>
-            <td>{item.setor}</td>
-            <td>{item.city}</td>
+            <td>{capitalize(item.nome)}</td>
+            <td>{capitalize(item.empresa)}</td>
+            <td>{capitalize(item.setor)}</td>
+            <td>{capitalize(item.city)}</td>
             <td>
               <Icons indexRow={item} />
             </td>
