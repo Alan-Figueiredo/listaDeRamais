@@ -1,12 +1,12 @@
 import styles from "./Header.module.css";
-import LogoItadil from "../../assets/grupoItadil.png";
+import LogoEmpresa from "../../assets/logoEmpresa.png";
 import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className={styles.header}>
       <Link to="/">
-        <img src={LogoItadil} alt="Grupo itadil" className={styles.logo} />
+        <img src={LogoEmpresa} alt="Logo da empresa" className={styles.logo} />
       </Link>
     </header>
   );

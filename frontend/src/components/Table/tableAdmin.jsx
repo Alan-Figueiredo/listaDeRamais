@@ -7,14 +7,15 @@ import { findAll } from "../../Services/contact/contactService";
 
 function TableAdmin() {
   const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [contactsPerPage] = useState(6); // Número de contatos por página
 
   function capitalize(string) {
-    const exceptions = ["de", "da", "do", "dos", "das"]; // Palavras que não devem ser capitalizadas
+    const exceptions = ["de", "da", "do", "dos", "das"];
     return string
       .toLowerCase()
       .split(" ")
       .map((word, index) => {
-        // Capitaliza a palavra se não for uma exceção ou se for a primeira palavra
         if (exceptions.includes(word) && index !== 0) {
           return word;
         }
@@ -43,37 +44,64 @@ function TableAdmin() {
     findAllContacts();
   }, []);
 
+  // Lógica de paginação
+  const indexOfLastContact = currentPage * contactsPerPage;
+  const indexOfFirstContact = indexOfLastContact - contactsPerPage;
+  const currentContacts = data.slice(indexOfFirstContact, indexOfLastContact);
+
+  // Total de páginas
+  const totalPages = Math.ceil(data.length / contactsPerPage);
+
+  // Mudar página
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
-    <table className={styles.containerTableAdmin}>
-      <thead>
-        <tr>
-          <th>Ramal</th>
-          <th>Nome</th>
-          <th>Empresa</th>
-          <th>Setor</th>
-          <th>Cidade</th>
-          <th>
-            <Link to="/page-new-ramal">
-              <ButtonCustom nome="Novo Ramal" />
-            </Link>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item, i) => (
-          <tr key={i}>
-            <td>{item.ramal}</td>
-            <td>{capitalize(item.nome)}</td>
-            <td>{capitalize(item.empresa)}</td>
-            <td>{capitalize(item.setor)}</td>
-            <td>{capitalize(item.city)}</td>
-            <td>
-              <Icons indexRow={item} />
-            </td>
+    <>
+      <table className={styles.containerTableAdmin}>
+        <thead>
+          <tr>
+            <th>Ramal</th>
+            <th>Nome</th>
+            <th>Empresa</th>
+            <th>Setor</th>
+            <th>Cidade</th>
+            <th>
+              <Link to="/page-new-ramal">
+                <ButtonCustom nome="Novo Ramal" />
+              </Link>
+            </th>
           </tr>
+        </thead>
+        <tbody>
+          {currentContacts.map((item, i) => (
+            <tr key={i}>
+              <td>{item.ramal}</td>
+              <td>{capitalize(item.nome)}</td>
+              <td>{capitalize(item.empresa)}</td>
+              <td>{capitalize(item.setor)}</td>
+              <td>{capitalize(item.city)}</td>
+              <td>
+                <Icons indexRow={item} />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      
+      <div className={styles.pagination}>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            style={{padding : 7}}
+            key={index + 1}
+            onClick={() => paginate(index + 1)}
+            className={currentPage === index + 1 ? styles.active : ""}
+          >
+            {index + 1}
+          </button>
         ))}
-      </tbody>
-    </table>
+      </div>
+    </>
   );
 }
 

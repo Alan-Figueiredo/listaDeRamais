@@ -15,37 +15,35 @@ VALUES
 
 INSERT INTO tb_city (name_city)
 VALUES
-    ("feira de santana"),
-    ("itabuna"),
-    ("teixeira de freitas"),
-    ("jequie"),
-    ("irece"),
-    ("paulo afonso"),
-    ("eunapolis"),
-    ("vitoria da conquista"),
-    ("petrolina"),
-    ("juazeiro");
+    ("Aldoria"),
+    ("Belaview"),
+    ("Crestwood"),
+    ("Doveshire"),
+    ("Eastborough"),
+    ("Fairgrove"),
+    ("Glenrock"),
+    ("Havenhill"),
+    ("Ivystone"),
+    ("Juniper Grove");
 
-INSERT INTO tb_company (name_company,id_city)
+
+INSERT INTO tb_company (name_company, id_city)
 VALUES
-    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'feira de santana')),
-    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
-    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'teixeira de freitas')),
-    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'jequie')),
-    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'irece')),
-    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'paulo afonso')),
-    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'eunapolis')),
-    ('topazio', (SELECT id_city FROM tb_city WHERE name_city = 'juazeiro')),
-    ('rubi', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
-    ('rubi', (SELECT id_city FROM tb_city WHERE name_city = 'eunapolis')),
-    ('rubi', (SELECT id_city FROM tb_city WHERE name_city = 'petrolina')),
-    ('peugeot', (SELECT id_city FROM tb_city WHERE name_city = 'feira de santana')),
-    ('jade', (SELECT id_city FROM tb_city WHERE name_city = 'feira de santana')),
-    ('jade', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
-    ('jade', (SELECT id_city FROM tb_city WHERE name_city = 'teixeira de freitas')),
-    ('jade', (SELECT id_city FROM tb_city WHERE name_city = 'vitoria da conquista')),
-    ('itamadil', (SELECT id_city FROM tb_city WHERE name_city = 'teixeira de freitas')),
-    ('itadil', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
-    ('cristal', (SELECT id_city FROM tb_city WHERE name_city = 'itabuna')),
-    ('cristal', (SELECT id_city FROM tb_city WHERE name_city = 'teixeira de freitas')),
-    ('citroen', (SELECT id_city FROM tb_city WHERE name_city = 'feira de santana'));
+    ('empresa1', (SELECT id_city FROM tb_city WHERE name_city = 'Aldoria')),
+    ('empresa1', (SELECT id_city FROM tb_city WHERE name_city = 'Belaview')),
+    ('empresa1', (SELECT id_city FROM tb_city WHERE name_city = 'Crestwood')),
+    ('empresa1', (SELECT id_city FROM tb_city WHERE name_city = 'Doveshire')),
+    ('empresa1', (SELECT id_city FROM tb_city WHERE name_city = 'Eastborough')),
+    ('empresa1', (SELECT id_city FROM tb_city WHERE name_city = 'Fairgrove')),
+    ('empresa1', (SELECT id_city FROM tb_city WHERE name_city = 'Glenrock')),
+    ('empresa1', (SELECT id_city FROM tb_city WHERE name_city = 'Juniper Grove')),
+    ('empresa3', (SELECT id_city FROM tb_city WHERE name_city = 'Belaview')),
+    ('empresa3', (SELECT id_city FROM tb_city WHERE name_city = 'Glenrock')),
+    ('empresa3', (SELECT id_city FROM tb_city WHERE name_city = 'Ivystone')),
+    ('empresa4', (SELECT id_city FROM tb_city WHERE name_city = 'Aldoria')),
+    ('empresa2', (SELECT id_city FROM tb_city WHERE name_city = 'Aldoria')),
+    ('empresa2', (SELECT id_city FROM tb_city WHERE name_city = 'Belaview')),
+    ('empresa2', (SELECT id_city FROM tb_city WHERE name_city = 'Crestwood')),
+    ('empresa2', (SELECT id_city FROM tb_city WHERE name_city = 'Havenhill')),
+    ('empresa5', (SELECT id_city FROM tb_city WHERE name_city = 'Crestwood'));
+

@@ -1,14 +1,11 @@
-
 const images = {
-    topazio: '/logotopazio.png',
-    jade: '/logojade.png',
-    cristal: '/logocristal.png',
-    itamadil: '/logoitamadil.png',
-    itadil: '/logoitadil.png',
-    rubi: '/logorubi.png',
-    peugeot: '/logopeugeot.png',
-    citroen: '/logocitroen.png'
-  };
-  
-  export default images;
-  
+  empresa1: "/logoempresa1.png",
+  empresa2: "/logoempresa2.png",
+  empresa3: "/logoempresa3.png",
+  empresa4: "/logoempresa4.png",
+  empresa5: "/logoempresa5.png",
+  empresa6: "/logoempresa6.png",
+ 
+};
+
+export default images;
