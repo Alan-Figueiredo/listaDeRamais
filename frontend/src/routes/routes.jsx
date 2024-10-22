@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
-import ListCity from "../pages/ListCity";
-import Agenda from "../pages/Agenda";
-import Admin from "../pages/Admin";
-import PageAdmin from "../pages/PageAdmin";
+import Home from "../pages/home";
+import ListCity from "../pages/listCity";
+import Agenda from "../pages/agenda";
+import Admin from "../pages/admin";
+import PageAdmin from "../pages/pageAdmin";
 import PageNewRamal from "../pages/pageNewRamal";
 import PageEdit from "../pages/pageNewRamal/pageEdit";
 
